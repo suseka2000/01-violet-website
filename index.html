@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Демонстрационная версия нового сайта VIOLET: подбор систем отделки, калькулятор и структурированная заявка инженеру."
+    />
+    <meta name="theme-color" content="#6f46a6" />
+    <title>VIOLET — системы отделки стен и потолков</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/revision.css" />
+    <script src="js/catalog-data.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="VIOLET — на главную">
+          <img src="assets/images/violet-logo.webp" alt="VIOLET" width="2000" height="700" />
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-navigation" id="main-navigation" aria-label="Основная навигация" data-menu>
+          <div class="mobile-nav-heading">
+            <span>Навигация</span>
+            <small>Системы отделки VIOLET</small>
+          </div>
+          <a href="#solutions"><span class="nav-index">01</span><span>Решения</span></a>
+          <a href="#systems"><span class="nav-index">02</span><span>Системы</span></a>
+          <a href="#projects"><span class="nav-index">03</span><span>Проекты</span></a>
+          <a href="#specialists"><span class="nav-index">04</span><span>Специалистам</span></a>
+          <a href="#production"><span class="nav-index">05</span><span>Производство</span></a>
+          <button class="button button-primary mobile-nav-cta" type="button" data-open-calculator>
+            Рассчитать проект <span aria-hidden="true">↗</span>
+          </button>
+        </nav>
+
+        <button class="button button-primary header-cta" type="button" data-open-calculator>
+          Рассчитать проект
+          <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </header>
+
+    <button class="menu-backdrop" type="button" aria-label="Закрыть меню" tabindex="-1" data-menu-backdrop></button>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Системы отделки для общественных пространств</p>
+            <h1>От задачи объекта — к готовой спецификации.</h1>
+            <p class="hero-lead">
+              Подбираем стеновые и потолочные панели с учётом дизайна,
+              эксплуатации и технических требований. Производим, поставляем
+              и сопровождаем монтаж.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary button-large" href="#solutions">
+                Подобрать систему <span aria-hidden="true">↓</span>
+              </a>
+              <button class="button button-secondary button-large" type="button" data-sample-button>
+                Получить образцы
+              </button>
+            </div>
+            <dl class="hero-stats" aria-label="Показатели компании">
+              <div>
+                <dt>9 000+</dt>
+                <dd>м² продукции в сутки</dd>
+              </div>
+              <div>
+                <dt>5 000+</dt>
+                <dd>реализованных проектов</dd>
+              </div>
+              <div>
+                <dt>50+</dt>
+                <dd>единиц оборудования</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-media">
+            <img
+              src="assets/images/production-line.jpg"
+              alt="Производственная линия VIOLET в Ардатове"
+              width="1600"
+              height="1068"
+            />
+            <div class="media-caption">
+              <span class="caption-label">Полный цикл</span>
+              <p>Проектирование → производство → поставка → сопровождение монтажа</p>
+            </div>
+            <div class="media-badge" aria-label="Производственный кластер более 10 000 квадратных метров">
+              <strong>10 000+</strong>
+              <span>м² производственного<br />кластера</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution-finder section" id="solutions">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">Быстрый подбор</p>
+              <h2>Начните не с каталога, а с задачи объекта</h2>
+            </div>
+            <p>
+              Выберите назначение помещения. Сайт сразу покажет подходящую
+              систему и объяснит рекомендацию.
+            </p>
+          </div>
+
+          <div class="finder-layout">
+            <div class="industry-picker" role="group" aria-label="Тип объекта">
+              <button class="industry-option is-active" type="button" data-industry="medical" aria-pressed="true">
+                <span class="industry-number">01</span>
+                <span>
+                  <strong>Медицина</strong>
+                  <small>Гигиена и интенсивная эксплуатация</small>
+                </span>
+                <span class="option-arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="industry-option" type="button" data-industry="education" aria-pressed="false">
+                <span class="industry-number">02</span>
+                <span>
+                  <strong>Образование</strong>
+                  <small>Безопасность и акустический комфорт</small>
+                </span>
+                <span class="option-arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="industry-option" type="button" data-industry="hospitality" aria-pressed="false">
+                <span class="industry-number">03</span>
+                <span>
+                  <strong>HoReCa и офисы</strong>
+                  <small>Дизайн, износостойкость и скорость</small>
+                </span>
+                <span class="option-arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="industry-option" type="button" data-industry="industrial" aria-pressed="false">
+                <span class="industry-number">04</span>
+                <span>
+                  <strong>Промышленность</strong>
+                  <small>Негорючесть и устойчивость к нагрузкам</small>
+                </span>
+                <span class="option-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+
+            <article class="recommendation" aria-live="polite">
+              <div class="recommendation-topline">
+                <span>Рекомендованная система</span>
+                <span class="status-dot"><i></i> подходит задаче</span>
+              </div>
+              <figure class="recommendation-media">
+                <img
+                  src="assets/images/products/silver-1.jpg"
+                  alt="Violet Silver в готовом медицинском интерьере"
+                  width="1498"
+                  height="1000"
+                  data-recommendation-image
+                />
+                <figcaption data-recommendation-caption>Медицинские и «чистые» помещения</figcaption>
+              </figure>
+              <p class="recommendation-code" data-recommendation-code>Антибактериальная система</p>
+              <h3 data-recommendation-title>Violet Silver</h3>
+              <p data-recommendation-description>
+                Панели для помещений с повышенными требованиями к гигиене и
+                регулярной санитарной обработке.
+              </p>
+              <ul class="feature-list" data-recommendation-features>
+                <li>Антибактериальное покрытие</li>
+                <li>Устойчивость к интенсивной эксплуатации</li>
+                <li>Документы и схемы монтажа для проектировщика</li>
+              </ul>
+              <p class="recommendation-bases">Виды основ: <strong data-recommendation-bases>ГКЛ, Кремнит, СМЛ</strong></p>
+              <div class="recommendation-actions">
+                <button class="button button-primary" type="button" data-open-calculator data-calculator-source="finder">
+                  Добавить в расчёт
+                </button>
+                <a class="text-link" href="system.html?product=silver" data-recommendation-detail>Открыть систему →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="systems section section-dark" id="systems">
+        <div class="container">
+          <div class="section-heading systems-heading">
+            <div>
+              <p class="eyebrow eyebrow-light">Линейка решений</p>
+              <h2>Система под каждое требование проекта</h2>
+            </div>
+            <div class="filter-row" role="group" aria-label="Фильтр систем">
+              <button type="button" class="filter-button is-active" data-system-filter="all" aria-pressed="true">Все</button>
+              <button type="button" class="filter-button" data-system-filter="safety" aria-pressed="false">Безопасность</button>
+              <button type="button" class="filter-button" data-system-filter="design" aria-pressed="false">Дизайн</button>
+              <button type="button" class="filter-button" data-system-filter="comfort" aria-pressed="false">Комфорт</button>
+            </div>
+          </div>
+
+          <div class="systems-grid" data-systems-grid>
+            <a class="system-card system-card-featured" href="system.html?product=silver" data-system-category="safety">
+              <figure class="system-card-media">
+                <img src="assets/images/products/silver-1.jpg" alt="Violet Silver в медицинском интерьере" loading="lazy" />
+                <span class="system-index">01</span>
+              </figure>
+              <div class="system-card-copy">
+                <span class="system-tag">Антибактериальные</span>
+                <h3>Violet Silver</h3>
+                <p>Покрытие для медицинских, лабораторных и других «чистых» помещений.</p>
+                <p class="system-bases">Виды основ: <strong>ГКЛ, Кремнит, СМЛ</strong></p>
+                <span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span>
+              </div>
+            </a>
+            <a class="system-card" href="system.html?product=ng" data-system-category="safety">
+              <figure class="system-card-media">
+                <img src="assets/images/products/ng-1.jpg" alt="Негорючие панели Violet НГ в готовом помещении" loading="lazy" />
+                <span class="system-index">02</span>
+              </figure>
+              <div class="system-card-copy">
+                <span class="system-tag">Класс КМ-0</span>
+                <h3>Violet НГ</h3>
+                <p>Огнезащита стен и потолков с полноценной декоративной поверхностью.</p>
+                <p class="system-bases">Виды основ: <strong>Кремнит, СМЛ</strong></p>
+                <span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span>
+              </div>
+            </a>
+            <a class="system-card" href="system.html?product=acoustic" data-system-category="comfort">
+              <figure class="system-card-media">
+                <img src="assets/images/products/acoustic-1.jpg" alt="Акустические панели Violet в интерьере" loading="lazy" />
+                <span class="system-index">03</span>
+              </figure>
+              <div class="system-card-copy">
+                <span class="system-tag">Акустический комфорт</span>
+                <h3>Violet Acoustic</h3>
+                <p>Перфорированные решения для снижения эха и реверберации.</p>
+                <p class="system-bases">Виды основ: <strong>ГКЛ, Кремнит, МДФ, СМЛ</strong></p>
+                <span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span>
+              </div>
+            </a>
+            <a class="system-card" href="system.html?product=organic" data-system-category="design">
+              <figure class="system-card-media">
+                <img src="assets/images/products/organic-1.jpg" alt="Шпонированные панели Violet Organic в интерьере" loading="lazy" />
+                <span class="system-index">04</span>
+              </figure>
+              <div class="system-card-copy">
+                <span class="system-tag">Натуральный шпон</span>
+                <h3>Violet Organic</h3>
+                <p>Натуральная древесная фактура для представительских пространств.</p>
+                <p class="system-bases">Виды основ: <strong>ГСП, СМЛ</strong></p>
+                <span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span>
+              </div>
+            </a>
+            <a class="system-card" href="system.html?product=protect" data-system-category="safety design">
+              <figure class="system-card-media">
+                <img src="assets/images/products/protect-1.jpg" alt="Violet Protect в общественном интерьере" loading="lazy" />
+                <span class="system-index">05</span>
+              </figure>
+              <div class="system-card-copy">
+                <span class="system-tag">Износостойкость</span>
+                <h3>Violet Protect</h3>
+                <p>Гладкое полимерное покрытие для зон с высокой эксплуатационной нагрузкой.</p>
+                <p class="system-bases">Виды основ: <strong>ГКЛ, Кремнит, СМЛ</strong></p>
+                <span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span>
+              </div>
+            </a>
+            <a class="system-card" href="system.html?product=color" data-system-category="design">
+              <figure class="system-card-media">
+                <img src="assets/images/products/color-1.jpg" alt="Гипсоакриловые панели Violet Color в офисе" loading="lazy" />
+                <span class="system-index">06</span>
+              </figure>
+              <div class="system-card-copy">
+                <span class="system-tag">Готовая отделка</span>
+                <h3>Violet Color</h3>
+                <p>Рациональное решение для быстрой отделки офисных и общественных пространств.</p>
+                <p class="system-bases">Виды основ: <strong>ГКЛ, ГСП</strong></p>
+                <span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span>
+              </div>
+            </a>
+            <a class="system-card" href="system.html?product=basis" data-system-category="safety">
+              <figure class="system-card-media"><img src="assets/images/products/ng-1.jpg" alt="Violet Basis — негорючая базовая панель" loading="lazy" /><span class="system-index">07</span></figure>
+              <div class="system-card-copy"><span class="system-tag">Базовая КМ-0</span><h3>Violet Basis</h3><p>Негорючая основа под финишную отделку и инженерные задачи.</p><p class="system-bases">Виды основ: <strong>Кремнит, СМЛ</strong></p><span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span></div>
+            </a>
+            <a class="system-card" href="system.html?product=medium" data-system-category="design">
+              <figure class="system-card-media"><img src="assets/images/products/medium/01.jpg" alt="Violet Medium — древесноволокнистые панели" loading="lazy" /><span class="system-index">08</span></figure>
+              <div class="system-card-copy"><span class="system-tag">Древесноволокнистые</span><h3>Violet Medium</h3><p>Готовая внутренняя отделка на древесноволокнистой основе.</p><p class="system-bases">Виды основ: <strong>ГКЛ, ГСП</strong></p><span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span></div>
+            </a>
+            <a class="system-card" href="system.html?product=sky" data-system-category="comfort design">
+              <figure class="system-card-media"><img src="assets/images/products/sky/01.jpg" alt="Violet Sky — потолочные панели" loading="lazy" /><span class="system-index">09</span></figure>
+              <div class="system-card-copy"><span class="system-tag">Потолочные</span><h3>Violet Sky</h3><p>Цветная отделка подвесных потолков с быстрым монтажом.</p><p class="system-bases">Виды основ: <strong>ГКЛ, Кремнит, СМЛ</strong></p><span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span></div>
+            </a>
+            <a class="system-card" href="system.html?product=vinyl" data-system-category="design">
+              <figure class="system-card-media"><img src="assets/images/products/vinyl/01.jpg" alt="Violet Vinyl — гипсовиниловые панели" loading="lazy" /><span class="system-index">10</span></figure>
+              <div class="system-card-copy"><span class="system-tag">Гипсовиниловые</span><h3>Violet Vinyl</h3><p>Durafort-покрытие для интенсивно используемых интерьеров.</p><p class="system-bases">Виды основ: <strong>ГКЛ, Кремнит, МДФ, СМЛ</strong></p><span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span></div>
+            </a>
+            <a class="system-card" href="system.html?product=sticker" data-system-category="design safety">
+              <figure class="system-card-media"><img src="assets/images/products/sticker/01.jpg" alt="Violet Sticker — ламинированные панели" loading="lazy" /><span class="system-index">11</span></figure>
+              <div class="system-card-copy"><span class="system-tag">Ламинированные</span><h3>Violet Sticker</h3><p>Высокопрочная ПВХ-плёнка и 87 декоров для ежедневной нагрузки.</p><p class="system-bases">Виды основ: <strong>ГВЛ, ГКЛ, ГСП, Кремнит, МДФ, СМЛ</strong></p><span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span></div>
+            </a>
+            <a class="system-card" href="system.html?product=plastic" data-system-category="safety">
+              <figure class="system-card-media"><img src="assets/images/products/plastic/01.jpg" alt="Violet Plastic — антивандальные панели" loading="lazy" /><span class="system-index">12</span></figure>
+              <div class="system-card-copy"><span class="system-tag">Антивандальные</span><h3>Violet Plastic</h3><p>HPL-поверхность для помещений с риском ударов и истирания.</p><p class="system-bases">Виды основ: <strong>ГВЛ, ГСП, СМЛ</strong></p><span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span></div>
+            </a>
+            <a class="system-card" href="system.html?product=front" data-system-category="safety design">
+              <figure class="system-card-media"><img src="assets/images/products/front/01.jpg" alt="Violet Front — фасадные панели" loading="lazy" /><span class="system-index">13</span></figure>
+              <div class="system-card-copy"><span class="system-tag">Фасадные</span><h3>Violet Front</h3><p>Наружная отделка фасадов, цоколей и входных групп.</p><p class="system-bases">Виды основ: <strong>ФЦП, Кремнит, HPL</strong></p><span class="card-link">Открыть систему <i aria-hidden="true">↗</i></span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section" id="projects">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">Реализованные проекты</p>
+              <h2>Реальные объекты. Реальные панели.</h2>
+            </div>
+            <p>Объекты из официального портфолио VIOLET. Откройте карточку, чтобы посмотреть фотографии, материалы, объём и срок поставки.</p>
+          </div>
+          <div class="project-toolbar">
+            <div class="project-filters" role="group" aria-label="Фильтр проектов">
+              <button type="button" class="project-filter is-active" data-project-filter="all" aria-pressed="true">Все</button>
+              <button type="button" class="project-filter" data-project-filter="education" aria-pressed="false">Образование</button>
+              <button type="button" class="project-filter" data-project-filter="infrastructure" aria-pressed="false">Транспорт</button>
+              <button type="button" class="project-filter" data-project-filter="medical" aria-pressed="false">Медицина</button>
+              <button type="button" class="project-filter" data-project-filter="culture" aria-pressed="false">Культура</button>
+              <button type="button" class="project-filter" data-project-filter="industrial" aria-pressed="false">Промышленность</button>
+              <button type="button" class="project-filter" data-project-filter="other" aria-pressed="false">Другие</button>
+            </div>
+            <span class="project-count"><strong data-project-count>10</strong> <span data-project-count-label>объектов</span></span>
+          </div>
+          <div class="projects-grid" data-project-grid aria-live="polite"></div>
+          <noscript><p>Включите JavaScript, чтобы увидеть галерею проектов.</p></noscript>
+          <p class="source-note">Фотографии и характеристики взяты из опубликованного портфолио VIOLET.</p>
+        </div>
+      </section>
+
+      <section class="specialists section" id="specialists">
+        <div class="container specialists-grid">
+          <div class="specialists-copy">
+            <p class="eyebrow eyebrow-light">Архитекторам и проектировщикам</p>
+            <h2>Все материалы для проекта — в одном разделе</h2>
+            <p>
+              Сертификаты, инструкции, каталоги декоров, BIM-модели и узлы
+              монтажа без поиска по разным страницам и переписке.
+            </p>
+            <a class="button button-light" href="#documents">Открыть библиотеку</a>
+          </div>
+          <div class="document-browser" id="documents">
+            <div class="document-browser-head">
+              <strong>Библиотека специалиста</strong>
+              <span>3 раздела в демо</span>
+            </div>
+            <div class="document-tabs" role="group" aria-label="Типы документов">
+              <button type="button" aria-pressed="true" data-document-tab="certificates">Сертификаты</button>
+              <button type="button" aria-pressed="false" data-document-tab="bim">BIM</button>
+              <button type="button" aria-pressed="false" data-document-tab="installation">Монтаж</button>
+            </div>
+            <div class="document-list" data-document-list aria-live="polite">
+              <button type="button"><span class="file-type">PDF</span><span><strong>Пожарные сертификаты</strong><small>Комплект документов по системам</small></span><i>↓</i></button>
+              <button type="button"><span class="file-type">PDF</span><span><strong>Санитарные документы</strong><small>Материалы для проектной документации</small></span><i>↓</i></button>
+              <button type="button"><span class="file-type">PDF</span><span><strong>Технические характеристики</strong><small>Основы, покрытия и варианты применения</small></span><i>↓</i></button>
+            </div>
+            <p class="document-note">Демонстрация интерфейса: файлы не вложены в прототип.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="production section" id="production">
+        <div class="container">
+          <div class="section-heading split-heading production-heading">
+            <div>
+              <p class="eyebrow">Собственное производство</p>
+              <h2>От плиты-основы до готовой системы отделки</h2>
+            </div>
+            <p>Производственный кластер VIOLET расположен в Ардатове. На сайте показываем не случайно обрезанный кадр, а реальную линию, людей и этапы работы.</p>
+          </div>
+
+          <figure class="production-lead">
+            <img
+              src="assets/images/production-line.jpg"
+              alt="Полный вид производственной линии VIOLET в Ардатове"
+              width="1600"
+              height="1068"
+              loading="lazy"
+            />
+            <figcaption>
+              <span>Ардатов · Республика Мордовия</span>
+              <strong>Полный цикл производства в одном кластере</strong>
+            </figcaption>
+          </figure>
+
+          <div class="production-summary">
+            <div class="production-facts production-facts-large">
+              <div><strong>10 000+</strong><span>м² площадь производственного кластера</span></div>
+              <div><strong>9 000+</strong><span>м² готовой продукции в сутки</span></div>
+              <div><strong>50+</strong><span>единиц оборудования</span></div>
+              <div><strong>3×</strong><span>рост производства за последние три года</span></div>
+            </div>
+            <div class="production-story">
+              <p>Автоматизированные линии позволяют контролировать подготовку основы, нанесение покрытия, сушку, распил и финальную проверку качества.</p>
+              <p>Для клиента это означает предсказуемые сроки, повторяемость цвета и возможность собрать в одном проекте разные типы панелей и монтажных решений.</p>
+              <button class="button button-secondary" type="button" data-tour-button>Запросить экскурсию на производство</button>
+            </div>
+          </div>
+
+          <div class="production-gallery" aria-label="Производство VIOLET">
+            <figure>
+              <img src="assets/images/team-production.jpg" alt="Сотрудники VIOLET работают с панелью" width="1600" height="1068" loading="lazy" />
+              <figcaption>Контроль на производстве</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/panel-finishing.jpg" alt="Финишная обработка панели VIOLET" width="1600" height="1068" loading="lazy" />
+              <figcaption>Обработка поверхности и торцов</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/panels-closeup.jpg" alt="Готовые панели VIOLET крупным планом" width="1600" height="1068" loading="lazy" />
+              <figcaption>Готовая продукция</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="container contact-panel">
+          <div class="contact-copy">
+            <p class="eyebrow eyebrow-light">Следующий шаг</p>
+            <h2>Пришлите задачу объекта — вернёмся с подбором системы</h2>
+            <p>
+              В рабочей версии сюда можно подключить CRM и передавать менеджеру
+              уже структурированную заявку.
+            </p>
+            <div class="contact-details">
+              <a href="tel:88003025040">8 800 302-50-40</a>
+              <a href="mailto:office@vio-let.ru">office@vio-let.ru</a>
+            </div>
+          </div>
+          <form class="contact-form" data-contact-form>
+            <label>
+              Имя
+              <input type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться" required />
+            </label>
+            <label>
+              Телефон или email
+              <input type="text" name="contact" placeholder="Контакт для ответа" required />
+            </label>
+            <label>
+              Объект
+              <textarea name="project" rows="3" placeholder="Тип объекта, город и примерная площадь"></textarea>
+            </label>
+            <button class="button button-light button-full" type="submit">Отправить задачу</button>
+            <p class="form-disclaimer">Демонстрационная форма: данные никуда не отправляются.</p>
+            <div class="form-success" role="status" hidden data-contact-success>
+              Заявка собрана. В рабочей версии она будет передана менеджеру.
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand brand-footer" href="#top">
+            <img src="assets/images/violet-logo.webp" alt="VIOLET" width="2000" height="700" />
+          </a>
+          <p>Демонстрационная концепция нового сайта. Не является официальным сайтом компании.</p>
+        </div>
+        <div>
+          <strong>Центральный офис</strong>
+          <p>Саранск, ул. Советская, 75, офис 402</p>
+        </div>
+        <div>
+          <strong>Производство</strong>
+          <p>Ардатов, ул. Рабочая, 67</p>
+        </div>
+        <div>
+          <strong>Навигация</strong>
+          <a href="#solutions">Подбор системы</a>
+          <a href="#specialists">Специалистам</a>
+          <button type="button" data-open-calculator>Калькулятор</button>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 · Концепция VIOLET Digital</span>
+        <span>Информация не является публичной офертой</span>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" aria-atomic="true" data-toast></div>
+
+    <div class="calculator-modal" data-calculator-modal aria-hidden="true">
+      <button class="modal-backdrop" type="button" tabindex="-1" aria-label="Закрыть калькулятор" data-close-calculator></button>
+      <section class="calculator-dialog" role="dialog" aria-modal="true" aria-labelledby="calculator-title">
+        <header class="calculator-header">
+          <div>
+            <p class="eyebrow">VIOLET CALC · предварительный расчёт</p>
+            <h2 id="calculator-title">Рассчитайте систему для объекта</h2>
+          </div>
+          <button class="icon-button" type="button" aria-label="Закрыть калькулятор" data-close-calculator>×</button>
+        </header>
+
+        <div class="calculator-progress" aria-label="Прогресс расчёта">
+          <span class="progress-label">Шаг <strong data-current-step>1</strong> из 5</span>
+          <div class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" data-progress-track>
+            <i data-progress-bar></i>
+          </div>
+        </div>
+
+        <form class="calculator-form" data-calculator-form>
+          <div class="calculator-body">
+            <section class="calculator-step is-active" data-step="1">
+              <p class="step-kicker">01 · назначение</p>
+              <h3>Для какого объекта нужен расчёт?</h3>
+              <p class="step-intro">Это повлияет на базовую рекомендацию системы.</p>
+              <div class="choice-grid" role="radiogroup" aria-label="Назначение объекта">
+                <button type="button" class="choice-card is-selected" role="radio" aria-checked="true" data-calc-industry="medical">
+                  <strong>Медицинский центр</strong><small>Коридоры, кабинеты, процедурные</small>
+                </button>
+                <button type="button" class="choice-card" role="radio" aria-checked="false" data-calc-industry="education">
+                  <strong>Образование</strong><small>Школа, детский сад, вуз</small>
+                </button>
+                <button type="button" class="choice-card" role="radio" aria-checked="false" data-calc-industry="hospitality">
+                  <strong>HoReCa или офис</strong><small>Общественные и представительские зоны</small>
+                </button>
+                <button type="button" class="choice-card" role="radio" aria-checked="false" data-calc-industry="industrial">
+                  <strong>Промышленный объект</strong><small>Административные и рабочие пространства</small>
+                </button>
+              </div>
+            </section>
+
+            <section class="calculator-step" data-step="2">
+              <p class="step-kicker">02 · помещение</p>
+              <h3>Укажите размеры помещения</h3>
+              <p class="step-intro">Демонстрационный сценарий уже заполнен для коридора медицинского центра.</p>
+              <div class="dimension-grid">
+                <label>Длина, м<input type="number" min="0.1" step="0.1" value="30" name="length" data-dimension required /></label>
+                <label>Ширина, м<input type="number" min="0.1" step="0.1" value="2.4" name="width" data-dimension required /></label>
+                <label>Высота, м<input type="number" min="0.1" step="0.1" value="3" name="height" data-dimension required /></label>
+                <label>Площадь проёмов, м²<input type="number" min="0" step="0.1" value="18" name="openings" data-dimension required /></label>
+              </div>
+              <div class="live-area" aria-live="polite">
+                <span>Чистая площадь стен</span>
+                <strong><span data-net-area>176,4</span> м²</strong>
+              </div>
+            </section>
+
+            <section class="calculator-step" data-step="3">
+              <p class="step-kicker">03 · требования</p>
+              <h3>Что особенно важно для проекта?</h3>
+              <p class="step-intro">Можно выбрать несколько требований.</p>
+              <div class="requirement-grid">
+                <label class="check-option"><input type="checkbox" name="requirement" value="antibacterial" checked /><span><strong>Антибактериальность</strong><small>Регулярная санитарная обработка</small></span></label>
+                <label class="check-option"><input type="checkbox" name="requirement" value="fire" /><span><strong>Негорючесть</strong><small>Повышенные требования пожарной безопасности</small></span></label>
+                <label class="check-option"><input type="checkbox" name="requirement" value="impact" checked /><span><strong>Антивандальность</strong><small>Интенсивная эксплуатация</small></span></label>
+                <label class="check-option"><input type="checkbox" name="requirement" value="acoustic" /><span><strong>Акустический комфорт</strong><small>Контроль отражения звука</small></span></label>
+                <label class="check-option"><input type="checkbox" name="requirement" value="natural" /><span><strong>Натуральное покрытие</strong><small>Шпон и выразительная фактура</small></span></label>
+                <label class="check-option"><input type="checkbox" name="requirement" value="moisture" /><span><strong>Влагостойкость</strong><small>Условия эксплуатации проекта</small></span></label>
+              </div>
+            </section>
+
+            <section class="calculator-step" data-step="4">
+              <p class="step-kicker">04 · рекомендация</p>
+              <h3>Для задачи подходит <span data-calc-system-title>Violet Silver</span></h3>
+              <p class="step-intro" data-calc-system-reason>
+                Система отвечает выбранным требованиям к гигиене и интенсивной эксплуатации.
+              </p>
+              <div class="recommended-system">
+                <div class="recommended-swatch" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <div>
+                  <span class="system-tag" data-calc-system-tag>Антибактериальная система</span>
+                  <h4 data-calc-system-title-secondary>Violet Silver</h4>
+                  <ul data-calc-system-benefits>
+                    <li>подходит назначению объекта</li>
+                    <li>учитывает выбранные требования</li>
+                    <li>документы доступны для проверки инженером</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="calculation-note">Окончательный подбор основы, покрытия и узлов выполняет специалист VIOLET.</p>
+            </section>
+
+            <section class="calculator-step" data-step="5">
+              <p class="step-kicker">05 · результат</p>
+              <h3>Предварительный расчёт готов</h3>
+              <p class="step-intro">Структурированная заявка содержит больше данных, чем обычная форма обратного звонка.</p>
+              <div class="result-grid">
+                <div><span>Система</span><strong data-result-system>Violet Silver</strong></div>
+                <div><span>Чистая площадь</span><strong><span data-result-net-area>176,4</span> м²</strong></div>
+                <div><span>С запасом 7%</span><strong><span data-result-reserve-area>188,7</span> м²</strong></div>
+                <div><span>Предварительно</span><strong><span data-result-sheets>53</span> листа</strong></div>
+              </div>
+              <div class="minimum-order is-met" data-minimum-order>
+                <span aria-hidden="true">✓</span>
+                <div><strong>Минимальная партия выполнена</strong><small>На сайте компании указано условие от 50 листов.</small></div>
+              </div>
+              <div class="result-actions">
+                <button class="button button-primary" type="button" data-download-summary>Скачать резюме расчёта</button>
+                <button class="button button-secondary" type="button" data-show-lead-form>Отправить инженеру</button>
+              </div>
+              <div class="lead-form" hidden data-lead-form>
+                <label>Имя<input type="text" name="leadName" autocomplete="name" placeholder="Ваше имя" required /></label>
+                <label>Компания<input type="text" name="leadCompany" autocomplete="organization" placeholder="Название компании" required /></label>
+                <label>Контакт<input type="text" name="leadContact" placeholder="Телефон или email" required /></label>
+                <button class="button button-primary button-full" type="button" data-finish-lead>Передать расчёт</button>
+                <p class="form-disclaimer">Демонстрация: данные остаются в браузере и не отправляются.</p>
+              </div>
+              <div class="lead-success" role="status" hidden data-lead-success>
+                <strong>Готово.</strong> В рабочей версии инженер получит размеры, требования, систему и контакт клиента.
+              </div>
+              <p class="calculation-note">
+                Расчёт предварительный. Инженер проверит раскладку, профили,
+                запас, пожарные требования и нестандартные узлы.
+              </p>
+            </section>
+          </div>
+
+          <footer class="calculator-footer">
+            <button class="button button-secondary" type="button" data-previous-step disabled>← Назад</button>
+            <button class="button button-primary" type="button" data-next-step>Продолжить →</button>
+          </footer>
+        </form>
+      </section>
+    </div>
+
+    <dialog class="simple-dialog" data-simple-dialog>
+      <button class="icon-button dialog-close" type="button" aria-label="Закрыть" data-close-simple-dialog>×</button>
+      <p class="eyebrow" data-dialog-eyebrow>Запрос</p>
+      <h2 data-dialog-title>Оставьте контакт</h2>
+      <p data-dialog-text>Менеджер свяжется с вами и уточнит задачу.</p>
+      <form data-simple-form>
+        <label>Имя<input type="text" name="name" autocomplete="name" required /></label>
+        <label>Телефон или email<input type="text" name="contact" required /></label>
+        <button class="button button-primary button-full" type="submit">Оставить заявку</button>
+        <p class="form-disclaimer">Демонстрационная форма: данные никуда не отправляются.</p>
+      </form>
+    </dialog>
+  </body>
+</html>

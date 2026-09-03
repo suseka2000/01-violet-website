@@ -1,0 +1,16 @@
+{
+  "name": "VIOLET — концепция сайта",
+  "short_name": "VIOLET",
+  "lang": "ru",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f1ed",
+  "theme_color": "#6f46a6",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
