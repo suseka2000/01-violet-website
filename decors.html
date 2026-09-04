@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Полный каталог покрытий и декоров VIOLET: лакокрасочные, виниловые, ПВХ, HPL и шпонированные варианты." />
+    <meta name="theme-color" content="#6f46a6" />
+    <title>Каталог декоров VIOLET</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/revision.css" />
+    <link rel="stylesheet" href="css/catalog.css" />
+    <script src="js/app.js" defer></script>
+    <script src="js/decor-catalog-data.js" defer></script>
+    <script src="js/decors.js" defer></script>
+  </head>
+  <body class="catalog-page">
+    <a class="skip-link" href="#main-content">Перейти к каталогу</a>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="index.html#top" aria-label="VIOLET — на главную">
+          <img src="assets/images/violet-logo.webp" alt="VIOLET" width="2000" height="700" />
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-navigation" data-menu-toggle>
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-navigation" id="main-navigation" aria-label="Основная навигация" data-menu>
+          <div class="mobile-nav-heading"><span>Навигация</span><small>Системы отделки VIOLET</small></div>
+          <a href="index.html#solutions"><span class="nav-index">01</span><span>Решения</span></a>
+          <a href="index.html#systems"><span class="nav-index">02</span><span>Системы</span></a>
+          <a href="decors.html" aria-current="page"><span class="nav-index">03</span><span>Декоры</span></a>
+          <a href="index.html#projects"><span class="nav-index">04</span><span>Проекты</span></a>
+          <a href="index.html#specialists"><span class="nav-index">05</span><span>Специалистам</span></a>
+          <a href="index.html#production"><span class="nav-index">06</span><span>Производство</span></a>
+          <a class="button button-primary mobile-nav-cta" href="index.html#contact">Обсудить проект <span aria-hidden="true">↗</span></a>
+        </nav>
+        <a class="button button-primary header-cta" href="index.html#contact">Обсудить проект <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+    <button class="menu-backdrop" type="button" aria-label="Закрыть меню" tabindex="-1" data-menu-backdrop></button>
+
+    <main id="main-content" tabindex="-1">
+      <section class="catalog-shell" id="top">
+        <div class="container">
+          <a class="catalog-back" href="index.html#systems">← Вернуться к системам</a>
+          <div class="catalog-heading">
+            <div>
+              <p class="eyebrow eyebrow-light">Библиотека материалов</p>
+              <h1>Каталог декоров</h1>
+              <p>Выберите покрытие по материалу, серии, коду или названию. Нажмите на образец, чтобы рассмотреть его крупнее.</p>
+            </div>
+            <div class="catalog-total"><strong data-catalog-total>768</strong><span>вариантов отделки</span></div>
+          </div>
+
+          <div class="catalog-workspace">
+            <div class="catalog-search-row">
+              <label class="catalog-search">
+                <span>Поиск по каталогу</span>
+                <input type="search" placeholder="Например: дуб, серый, RAL 7035…" autocomplete="off" data-decor-search />
+                <i aria-hidden="true">⌕</i>
+              </label>
+              <button class="catalog-reset" type="button" data-decor-reset>Сбросить фильтры</button>
+            </div>
+
+            <div class="catalog-filter-block">
+              <span class="catalog-filter-label">Тип покрытия</span>
+              <div class="catalog-categories" data-decor-categories role="group" aria-label="Тип покрытия"></div>
+            </div>
+            <div class="catalog-filter-block" data-series-block hidden>
+              <span class="catalog-filter-label">Серия</span>
+              <div class="catalog-series" data-decor-series role="group" aria-label="Серия покрытия"></div>
+            </div>
+
+            <div class="catalog-results-head">
+              <p><strong data-result-count>0</strong> <span data-result-label>декоров найдено</span></p>
+              <span data-visible-count></span>
+            </div>
+            <div class="decor-catalog-grid" id="catalog-grid" data-decor-grid aria-live="polite"></div>
+            <div class="catalog-empty" data-decor-empty hidden>
+              <strong>Ничего не найдено</strong>
+              <p>Попробуйте другой код, название или категорию покрытия.</p>
+            </div>
+            <button class="button button-secondary catalog-more" type="button" data-decor-more hidden>Показать ещё</button>
+          </div>
+
+          <p class="catalog-source">Каталог собран по опубликованным материалам VIOLET. Оттенок на экране может отличаться от физического образца.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer catalog-footer">
+      <div class="container footer-grid">
+        <div><a class="brand brand-footer" href="index.html#top"><img src="assets/images/violet-logo.webp" alt="VIOLET" width="2000" height="700" /></a><p>Демонстрационная концепция нового сайта. Не является официальным сайтом компании.</p></div>
+        <div><strong>Каталог</strong><a href="decors.html">Все декоры</a><a href="system.html?product=color">Violet Color</a><a href="system.html?product=organic">Violet Organic</a></div>
+        <div><strong>Проекты</strong><a href="index.html#projects">Реализованные объекты</a><a href="index.html#contact">Обсудить задачу</a></div>
+      </div>
+      <div class="container footer-bottom"><span>© 2026 · Концепция VIOLET Digital</span><span>Информация не является публичной офертой</span></div>
+    </footer>
+
+    <dialog class="decor-detail-dialog" data-decor-dialog aria-label="Просмотр декора">
+      <div class="decor-detail-stage">
+        <button class="decor-detail-close" type="button" aria-label="Закрыть" data-decor-dialog-close>×</button>
+        <button class="decor-detail-arrow decor-detail-prev" type="button" aria-label="Предыдущий декор" data-decor-dialog-prev>←</button>
+        <figure><img src="assets/images/decors/wood/w100-swatch.jpg" alt="" data-decor-dialog-image /></figure>
+        <div class="decor-detail-copy">
+          <span data-decor-dialog-category>Покрытие</span>
+          <h2 data-decor-dialog-code>W 100</h2>
+          <p data-decor-dialog-name>Дуб белёный</p>
+          <small data-decor-dialog-series>Древесные</small>
+        </div>
+        <button class="decor-detail-arrow decor-detail-next" type="button" aria-label="Следующий декор" data-decor-dialog-next>→</button>
+      </div>
+    </dialog>
+  </body>
+</html>

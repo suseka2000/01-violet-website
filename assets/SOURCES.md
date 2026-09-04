@@ -28,6 +28,15 @@
 - Изображения одной комнаты с покрытиями W, F и RAL: https://vio-let.ru/production/dekorativnye-stenovye-paneli/gipsoakrilovye-paneli/
 - Локальные копии находятся в `assets/images/decors` и используются только в демонстрационной концепции.
 
+## Полный каталог декоров
+
+- Лакокрасочное покрытие — 189 образцов: https://vio-let.ru/decors/akrilovoe-polimernoe/
+- Виниловое покрытие — 47 образцов: https://vio-let.ru/decors/vinil/
+- Поливинилхлоридная плёнка — 87 образцов: https://vio-let.ru/decors/pvkh/
+- Пластик HPL — 268 образцов: https://vio-let.ru/decors/hpl/
+- Шпонированное покрытие — 177 образцов: https://vio-let.ru/decors/shpon/
+- Всего перенесено 768 опубликованных карточек. Оптимизированные локальные копии находятся в `assets/images/decor-catalog`.
+
 ## Портфолио
 
 - Каталог проектов: https://vio-let.ru/portfolio/
