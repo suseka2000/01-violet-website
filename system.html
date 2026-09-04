@@ -92,7 +92,7 @@
         <div class="container">
           <div class="section-heading split-heading">
             <div><p class="eyebrow">Примеры применения</p><h2>Панели в готовом интерьере</h2></div>
-            <p>Выберите кадр. На странице используются фотографии из официальной галереи конкретной системы VIOLET.</p>
+            <p>Нажмите на фотографию, чтобы открыть её крупнее. Используются кадры из официальной галереи конкретной системы VIOLET.</p>
           </div>
           <div class="detail-gallery" data-system-gallery></div>
         </div>
@@ -101,15 +101,22 @@
       <section class="section decor-section">
         <div class="container">
           <div class="section-heading split-heading">
-            <div><p class="eyebrow">Декор</p><h2>Посмотрите систему в разных фактурах</h2></div>
-            <p>Переключайте варианты отделки — фотографии и подписи помогают быстро обсудить настроение интерьера с заказчиком.</p>
+            <div><p class="eyebrow">Конструктор декоров</p><h2>Одна комната — разные покрытия</h2></div>
+            <p>Выберите тип покрытия, затем нажмите на образец. На большом изображении изменится только отделка стен.</p>
           </div>
-          <div class="decor-layout">
-            <figure class="decor-room">
-              <img src="assets/images/products/silver-1.jpg" alt="Предпросмотр декора VIOLET" data-decor-main-image />
-              <figcaption><span data-decor-name>Молочный</span><strong data-decor-meta>Однотонное покрытие</strong></figcaption>
-            </figure>
-            <div class="decor-options" data-decor-options role="group" aria-label="Варианты декора"></div>
+          <div class="decor-constructor">
+            <div class="decor-swatches" data-decor-options role="group" aria-label="Цвета и фактуры покрытия"></div>
+            <div class="decor-layout">
+              <figure class="decor-room">
+                <img src="assets/images/decors/wood/w100.jpg" alt="Комната с декором W 100 — Дуб белёный" data-decor-main-image />
+                <figcaption><span data-decor-name>W 100 — Дуб белёный</span><strong data-decor-meta>Древесные</strong></figcaption>
+              </figure>
+              <aside class="decor-sidebar">
+                <h3>Выберите стиль покрытия</h3>
+                <div class="decor-categories" data-decor-categories role="group" aria-label="Стиль покрытия"></div>
+                <a class="button button-primary decor-catalog-link" href="https://vio-let.ru/decors/" target="_blank" rel="noreferrer">Полный каталог декоров <span aria-hidden="true">↗</span></a>
+              </aside>
+            </div>
           </div>
         </div>
       </section>
@@ -137,5 +144,17 @@
     <footer class="site-footer detail-footer">
       <div class="container footer-bottom"><span>© 2026 · Концепция VIOLET Digital</span><a href="index.html">Вернуться на главную</a></div>
     </footer>
+
+    <dialog class="image-lightbox" data-image-lightbox aria-label="Увеличенная фотография системы">
+      <div class="lightbox-stage">
+        <button class="lightbox-close" type="button" aria-label="Закрыть увеличенное изображение" data-lightbox-close>×</button>
+        <button class="lightbox-arrow lightbox-arrow-prev" type="button" aria-label="Предыдущая фотография" data-lightbox-prev>←</button>
+        <figure>
+          <img src="assets/images/products/silver-1.jpg" alt="" data-lightbox-image />
+          <figcaption data-lightbox-caption></figcaption>
+        </figure>
+        <button class="lightbox-arrow lightbox-arrow-next" type="button" aria-label="Следующая фотография" data-lightbox-next>→</button>
+      </div>
+    </dialog>
   </body>
 </html>

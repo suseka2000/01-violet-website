@@ -394,36 +394,63 @@
 }
 
 .decor-section { background: var(--white); }
-.decor-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 18px; align-items: stretch; }
-.decor-room { position: relative; min-height: 500px; margin: 0; overflow: hidden; border-radius: 24px; background: #e8e3de; }
-.decor-room img { width: 100%; height: 100%; min-height: 500px; object-fit: cover; display: block; transition: opacity .25s ease; }
-.decor-room figcaption { position: absolute; left: 20px; right: 20px; bottom: 20px; display: flex; align-items: end; justify-content: space-between; gap: 12px; padding: 16px 18px; border-radius: 16px; color: #fff; background: rgba(22, 18, 24, .74); backdrop-filter: blur(10px); }
-.decor-room figcaption span { font-size: 1.2rem; letter-spacing: .03em; }
-.decor-room figcaption strong { max-width: 52%; text-align: right; color: #d9c5f0; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; }
-.decor-options { display: grid; gap: 10px; align-content: start; }
-.decor-option { display: grid; grid-template-columns: 92px minmax(0, 1fr) auto; gap: 14px; align-items: center; width: 100%; padding: 8px; border: 1px solid var(--line); border-radius: 16px; background: var(--white); color: var(--ink); text-align: left; cursor: pointer; transition: .2s ease; }
-.decor-option:hover, .decor-option.is-active { border-color: var(--violet); box-shadow: 0 8px 24px rgba(52, 31, 70, .11); transform: translateY(-1px); }
-.decor-option img { width: 92px; height: 78px; border-radius: 11px; object-fit: cover; }
-.decor-option span { display: grid; gap: 5px; }
-.decor-option strong { font-size: 1rem; letter-spacing: .02em; }
-.decor-option small { color: var(--muted); line-height: 1.35; }
-.decor-option i { font-style: normal; color: var(--violet); font-size: 1.2rem; padding-right: 8px; }
+.decor-constructor { display: grid; gap: 20px; }
+.decor-swatches { display: flex; gap: 12px; width: 100%; padding: 3px 3px 10px; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; }
+.decor-swatch { position: relative; flex: 0 0 96px; width: 96px; height: 96px; padding: 0; overflow: hidden; border: 2px solid transparent; border-radius: 16px; background: #eee9e5; cursor: pointer; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.decor-swatch::after { content: '✓'; position: absolute; right: 7px; bottom: 7px; display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; color: #fff; background: var(--violet); opacity: 0; transform: scale(.75); transition: .2s ease; }
+.decor-swatch:hover { transform: translateY(-2px); }
+.decor-swatch:focus-visible { outline: 3px solid rgba(111, 70, 166, .28); outline-offset: 3px; }
+.decor-swatch.is-active { border-color: var(--violet); box-shadow: 0 8px 22px rgba(52, 31, 70, .18); }
+.decor-swatch.is-active::after { opacity: 1; transform: scale(1); }
+.decor-swatch img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.decor-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .35fr); gap: clamp(20px, 3vw, 42px); align-items: stretch; }
+.decor-room { position: relative; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; border-radius: 24px; background: #e8e3de; }
+.decor-room img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.decor-room figcaption { position: absolute; top: 20px; left: 50%; display: grid; gap: 3px; min-width: min(82%, 330px); padding: 13px 20px; border-radius: 999px; color: var(--ink); background: rgba(255, 255, 255, .94); text-align: center; transform: translateX(-50%); box-shadow: 0 12px 28px rgba(26, 20, 30, .14); backdrop-filter: blur(10px); }
+.decor-room figcaption span { font-size: 1.02rem; font-weight: 720; letter-spacing: .025em; }
+.decor-room figcaption strong { color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; }
+.decor-sidebar { display: flex; flex-direction: column; gap: 20px; padding-block: 4px; }
+.decor-sidebar h3 { margin: 0 0 4px; font-size: clamp(1.6rem, 2.35vw, 2.45rem); line-height: 1.08; }
+.decor-categories { display: grid; gap: 12px; }
+.decor-category { width: 100%; min-height: 68px; padding: 13px 20px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: transparent; font: inherit; font-size: .9rem; font-weight: 760; letter-spacing: .055em; text-transform: uppercase; cursor: pointer; transition: .2s ease; }
+.decor-category:hover, .decor-category.is-active { border-color: var(--violet); color: var(--violet); background: rgba(111, 70, 166, .06); }
+.decor-category:focus-visible { outline: 3px solid rgba(111, 70, 166, .25); outline-offset: 3px; }
+.decor-catalog-link { justify-content: center; margin-top: auto; text-align: center; }
+
+body.lightbox-open { overflow: hidden; }
+.image-lightbox { width: 100vw; max-width: none; height: 100vh; max-height: none; margin: 0; padding: 0; border: 0; color: #fff; background: rgba(13, 10, 16, .96); overflow: hidden; }
+.image-lightbox::backdrop { background: rgba(13, 10, 16, .9); backdrop-filter: blur(7px); }
+.lightbox-stage { position: relative; display: grid; width: 100%; height: 100%; place-items: center; padding: 72px clamp(58px, 7vw, 118px) 54px; }
+.lightbox-stage figure { display: grid; gap: 14px; width: 100%; height: 100%; margin: 0; place-items: center; }
+.lightbox-stage img { max-width: 100%; max-height: calc(100vh - 145px); border-radius: 16px; object-fit: contain; box-shadow: 0 24px 70px rgba(0, 0, 0, .45); }
+.lightbox-stage figcaption { color: #d7cfdc; font-size: .83rem; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+.lightbox-close, .lightbox-arrow { position: absolute; z-index: 2; display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, .28); border-radius: 50%; color: #fff; background: rgba(255, 255, 255, .1); cursor: pointer; transition: .2s ease; }
+.lightbox-close:hover, .lightbox-arrow:hover { border-color: #fff; background: rgba(255, 255, 255, .2); }
+.lightbox-close:focus-visible, .lightbox-arrow:focus-visible { outline: 3px solid rgba(255, 255, 255, .65); outline-offset: 3px; }
+.lightbox-close { top: 20px; right: 22px; width: 48px; height: 48px; font-size: 2rem; line-height: 1; }
+.lightbox-arrow { top: 50%; width: 52px; height: 52px; font-size: 1.35rem; transform: translateY(-50%); }
+.lightbox-arrow-prev { left: 20px; }
+.lightbox-arrow-next { right: 20px; }
 
 @media (max-width: 900px) {
   .decor-layout { grid-template-columns: 1fr; }
-  .decor-room, .decor-room img { min-height: 420px; }
-  .decor-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .decor-option { grid-template-columns: 1fr; gap: 8px; }
-  .decor-option img { width: 100%; height: 120px; }
-  .decor-option i { display: none; }
+  .decor-sidebar { display: grid; grid-template-columns: 1fr; padding: 0; }
+  .decor-categories { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .decor-catalog-link { width: fit-content; margin-top: 0; }
 }
 @media (max-width: 560px) {
-  .decor-options { grid-template-columns: 1fr; }
-  .decor-option { grid-template-columns: 82px minmax(0, 1fr); }
-  .decor-option img { width: 82px; height: 70px; }
-  .decor-room, .decor-room img { min-height: 340px; }
-  .decor-room figcaption { left: 12px; right: 12px; bottom: 12px; padding: 12px; }
-  .decor-room figcaption strong { font-size: .68rem; }
+  .decor-swatch { flex-basis: 76px; width: 76px; height: 76px; border-radius: 13px; }
+  .decor-room { aspect-ratio: 4 / 3; border-radius: 18px; }
+  .decor-room figcaption { top: 12px; padding: 10px 14px; }
+  .decor-room figcaption span { font-size: .82rem; }
+  .decor-categories { grid-template-columns: 1fr; gap: 9px; }
+  .decor-category { min-height: 54px; }
+  .decor-catalog-link { width: 100%; }
+  .lightbox-stage { padding: 70px 14px 90px; }
+  .lightbox-stage img { max-height: calc(100vh - 180px); border-radius: 10px; }
+  .lightbox-arrow { top: auto; bottom: 22px; transform: none; }
+  .lightbox-arrow-prev { left: calc(50% - 62px); }
+  .lightbox-arrow-next { right: calc(50% - 62px); }
 }
 
 .official-source-line a {

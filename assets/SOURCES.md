@@ -22,6 +22,12 @@
 - Violet Plastic: https://vio-let.ru/production/dekorativnye-stenovye-paneli/antivandalnye-paneli/
 - Violet Front (фасадные): https://vio-let.ru/production/fasadnye-paneli/
 
+## Конструктор декоров
+
+- Официальный каталог декоров: https://vio-let.ru/decors/
+- Изображения одной комнаты с покрытиями W, F и RAL: https://vio-let.ru/production/dekorativnye-stenovye-paneli/gipsoakrilovye-paneli/
+- Локальные копии находятся в `assets/images/decors` и используются только в демонстрационной концепции.
+
 ## Портфолио
 
 - Каталог проектов: https://vio-let.ru/portfolio/
